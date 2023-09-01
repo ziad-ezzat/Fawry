@@ -1,0 +1,4 @@
+com\fawry\entities\Test.class
+com\fawry\repository\Demo.class
+com\fawry\repository\TestReository.class
+com\fawry\util\HibernateUtil.class

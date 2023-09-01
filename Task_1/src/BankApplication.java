@@ -6,7 +6,7 @@ public class BankApplication {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("1. Open a savings account");
+            System.out.println("1. add account");
             System.out.println("2. Deposit money");
             System.out.println("3. Withdraw money");
             System.out.println("4. View balance");
