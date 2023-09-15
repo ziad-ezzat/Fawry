@@ -5,14 +5,15 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/TaskHospital</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/taskProduct</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password"/>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
-        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
 
         <mapping class="org.example.entities.Doctor"/>
         <mapping class="org.example.entities.Patient"/>
         <mapping class="org.example.entities.Drug"/>
+        <mapping class="org.example.entities.Hospital"/>
     </session-factory>
 </hibernate-configuration>

@@ -1,23 +1,21 @@
 package org.example.entities;
 
 import lombok.Data;
-import org.example.entities.Doctor;
-import org.example.entities.Drug;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
 @Data
+@Entity
 @Table(name = "patient")
 public class Patient {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "patient_name")
     private String name;
 
     @Column(name = "age")
@@ -34,4 +32,8 @@ public class Patient {
             inverseJoinColumns = @JoinColumn(name = "drug_id")
     )
     List<Drug> drugList =new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "hospital_id")
+    private Hospital hospital;
 }

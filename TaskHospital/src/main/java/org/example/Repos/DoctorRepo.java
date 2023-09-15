@@ -2,6 +2,7 @@ package org.example.Repos;
 
 import org.example.AppDatabase;
 import org.example.entities.Doctor;
+import org.example.entities.Hospital;
 import org.example.entities.Patient;
 import org.hibernate.Session;
 
@@ -32,8 +33,6 @@ public class DoctorRepo {
             session.beginTransaction();
             session.save(doctor);
             session.getTransaction().commit();
-        } catch (Exception e) {
-            session.getTransaction().rollback();
         } finally {
             closeSession();
         }
@@ -59,12 +58,13 @@ public class DoctorRepo {
         }
     }
 
-    public Doctor getDoctor(Long id) {
+    public void addDoctorToHospital(Doctor doctor, Hospital hospital) {
         openSession();
         try {
-            return session.createQuery("from Doctor where id = :id", Doctor.class)
-                    .setParameter("id", id)
-                    .getSingleResult();
+            session.beginTransaction();
+            doctor.setHospital(hospital);
+            session.update(doctor);
+            session.getTransaction().commit();
         } finally {
             closeSession();
         }

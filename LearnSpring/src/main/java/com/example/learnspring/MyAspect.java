@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 import org.aspectj.lang.annotation.*;
 
 @Aspect
+@Component
 public class MyAspect {
 
     @Before("execution(* com.example.learnspring.*.*(..))")
@@ -14,20 +15,5 @@ public class MyAspect {
     @After("execution(* com.example.learnspring.*.*(..))")
     public void after() {
         System.out.println("After");
-    }
-
-    @AfterReturning("execution(* com.example.learnspring.*.*(..))")
-    public void afterReturning() {
-        System.out.println("AfterReturning");
-    }
-
-    @AfterThrowing("execution(* com.example.learnspring.*.*(..))")
-    public void afterThrowing() {
-        System.out.println("AfterThrowing");
-    }
-
-    @Around("execution(* com.example.learnspring.*.*(..))")
-    public void around() {
-        System.out.println("Around");
     }
 }
