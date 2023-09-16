@@ -1,7 +1,6 @@
 package com.example.taskspring.rest;
 
 import com.example.taskspring.common.ProductModel;
-import com.example.taskspring.repository.entity.Product;
 import com.example.taskspring.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

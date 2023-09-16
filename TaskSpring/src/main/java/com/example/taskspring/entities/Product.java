@@ -1,4 +1,4 @@
-package com.example.taskspring.repository.entity;
+package com.example.taskspring.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;

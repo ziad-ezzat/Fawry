@@ -2,10 +2,9 @@ package com.example.taskspring.service.impl;
 
 import com.example.taskspring.common.ProductModel;
 import com.example.taskspring.repository.ProductRepo;
-import com.example.taskspring.repository.entity.Product;
+import com.example.taskspring.entities.Product;
 import com.example.taskspring.service.ProductService;
 import com.example.taskspring.service.mapper.ProductMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
