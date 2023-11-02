@@ -3,6 +3,7 @@ package com.example.taskspring.rest;
 import com.example.taskspring.common.ProductModel;
 import com.example.taskspring.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,8 +12,11 @@ import java.util.List;
 @RequestMapping("/api/products")
 public class ProductResource {
 
-    @Autowired
-    private ProductService productService;
+    private final ProductService productService;
+
+    public ProductResource(@Qualifier("productServiceImpl") ProductService productService) {
+        this.productService = productService;
+    }
 
     @GetMapping
     List<ProductModel> getAllProducts() {

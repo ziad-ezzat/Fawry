@@ -11,6 +11,7 @@ public class ProductService {
     }
 
     public void addProduct(Product product) {
+        System.out.println(product);
         if (!product.getName().isEmpty() && product.getPrice() > 0) {
             repository.addProduct(product);
         }
